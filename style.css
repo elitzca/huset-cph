@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* menu */
+
+#sidebar {
+    position: fixed;
+    width: 250px;
+    max-width: 85%;  /* not sure if they shouldn't be reversed*/
+    height: 100%;
+    background: rgba(0,0,0,0.92);
+    left: -250px;
+    transition: all 500ms linear;
+}
+
+#sidebar.active {
+    left: 0px;
+}
+
+#sidebar ul li {
+    color: #fff;
+    list-style: none;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(100,100,100,0.8);
+}
+
+ul.menuScroll {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+ul.menuScroll::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+#sidebar .toggle-btn {
+    position: absolute;
+    left: 270px;
+    top: 10px;
+}
+
+#sidebar .toggle-btn span {
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: rgba(0,0,0,0.92);
+    margin: 5px 0px;
+}
+
+/**/
+
+body {
+    background-color: #EDF8FE;
+}
+
+/* Fluid Grids */
+.grids {
+    width: 80%;
+    margin-left: 10%;
+}
+
+main section {   /* main section */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+    grid-column-gap: 0.5em;
+    grid-row-gap: 0.8em;
+}
+
+/*main article {
+    max-height: 350px;
+}*/
+
+article img {
+    width: 500px;
+    max-width: 100%;
+}
+
+
+/**/
+#huset-logo {
+    display: block;
+    margin: auto;
+    max-width: 40%;
+}
+/**/
+article {
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.description {
+    max-height: 100px;
+    overflow: hidden;
+}
+/**/
+
+.event {
+    border: 3px solid #fff;
+    padding: 1.5em;
+}
+
+.event .image {
+    width: 100px;
+    height: 100px;
+}

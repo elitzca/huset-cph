@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500" rel="stylesheet">
+    <title>Huset-CPH</title>
+</head>
+
+<body>
+
+        <div id="sidebar">
+            <div class="toggle-btn" onclick="toggleSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Events</a>
+            </ul>
+        </div>
+
+        <div class="grids">
+
+            <h1>Events</h1>
+
+            <main>
+                <section id="evtlist">
+                    <template id="evttemplate">
+                        <article class="event">
+                            <h1>TITLE</h1>
+                            <h2 class="price"><span></span> kr</h2>
+                            <img src="" alt="Picture of the event">
+                            <div class="time">Late anyways</div>
+                            <div class="date">Date: me</div>
+                            <div class="venue">Where you wanna be</div>
+                            <div class="description"></div>
+                            <li><a class="readmore" href="subpage.html?id=">Read more</a></li>
+                        </article>
+                    </template>
+                </section>
+            </main>
+        </div>
+
+
+    </body>
+
+    <script src="menu.js"></script>
+    <script src="subpage.js"></script>
+</html>
