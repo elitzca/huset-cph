@@ -10,7 +10,7 @@ function fetchEvents (){
 
     let catid = urlParameters.get("category");
     if(catid){
-        fetch("http://elitzca.eu/kea/wordpress/wp-json/wp/v2/event?_embed&per_page=10&page=" + page + "&categories=" + catid)
+        fetch("http://elitzca.eu/kea/wordpress/wp-json/wp/v2/event?_embed&per_page=10&page=" + page + "&categories=" + catid )
     .then( e => e.json())
     .then(showEvents)
     } else {
