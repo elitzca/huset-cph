@@ -4,6 +4,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    background-color:  #DEEFF9;
+}
+
 /* menu */
 
 #sidebar {
@@ -14,6 +18,7 @@
     background: rgba(0,0,0,0.92);
     left: -250px;
     transition: all 500ms linear;
+    z-index: 10;
 }
 
 #sidebar.active {
@@ -24,7 +29,13 @@
     color: #fff;
     list-style: none;
     padding: 15px 20px;
-    border-bottom: 1px solid rgba(100,100,100,0.8);
+}
+
+#sidebar ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    opacity: 0.8;
 }
 
 ul.menuScroll {
@@ -51,11 +62,20 @@ ul.menuScroll::-webkit-scrollbar {
     margin: 5px 0px;
 }
 
+#sidebar .bullet {
+    list-style: square;
+    list-style-position: inside;
+    padding-left: 10px;
+}
+
+.menu-icon {
+    width: 30px;
+
+}
+
 /**/
 
-body {
-    background-color: #EDF8FE;
-}
+
 
 /* Fluid Grids */
 .grids {
@@ -74,11 +94,12 @@ main section {   /* main section */
     max-height: 350px;
 }*/
 
-article img {
-    width: 500px;
-    max-width: 100%;
-}
 
+#page-title {
+    font-size: 3em;
+    margin-left: 44%;
+    margin-bottom: 20px;
+}
 
 /**/
 #huset-logo {
@@ -86,24 +107,103 @@ article img {
     margin: auto;
     max-width: 40%;
 }
-/**/
-article {
+/*Article design*/
+.event {
+    border: 1.5px solid #000;
+    background: #FBFDFE;
+    padding: 1.5em;
+    margin: 0.3em;
     max-height: 400px;
     overflow: hidden;
+    position: relative;
 }
 
+article h1 {
+    max-width: 73%;
+    text-transform: uppercase;
+    font-size: 100%;
+}
+
+.price {
+    color: #f70000;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    font-size: 100%;
+}
+
+article img {
+    width: 500px;
+    max-width: 100%;
+     margin: 0.7em 0 1.1em 0;
+}
+
+.date, .time, .venue {
+    font-weight: 700;
+}
+
+
 .description {
-    max-height: 100px;
+    max-height: 80px;
     overflow: hidden;
+    margin-top: 0.5em;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.readmore {
+    position: absolute;
+    left: 36%;
+    bottom: 1em;
+    text-decoration: none;
+    color: #f70000;
+}
+
+.event li {
+    list-style: none;
 }
 /**/
 
-.event {
-    border: 3px solid #fff;
-    padding: 1.5em;
+/* Subpage CSS*/
+#showSingleEvent {
+    display: block;
+    max-width: 50%;
+    margin: auto;
+    padding-top: 3%;
+
 }
 
-.event .image {
-    width: 100px;
-    height: 100px;
+#showSingleEvent h1 {
+    padding: 7%;
 }
+
+#showSingleEvent img {
+    padding: 7%;
+}
+
+#showSingleEvent .time {
+    padding: 1%;
+}
+
+#showSingleEvent .date {
+    padding: 1%;
+}
+
+#showSingleEvent .venue {
+    padding: 1%;
+}
+
+#showSingleEvent .description {
+    height: 100%;
+    max-height: 100%;
+    overflow: visible;
+    margin-top: 0.5em;
+    font-size: 15px;
+    font-weight: 300;
+    padding-bottom: 13%;
+}
+/**/
+
+
+
+

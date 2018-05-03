@@ -2,13 +2,26 @@
 
 let id = urlParameters.get("id");
 
-fetch("http://elitzca.eu/kea/wordpress/wp-json/wp/v2/event/" + id)
-    .then(e => e.json())
-    .then(showSinglePost)
+fetch("http://elitzca.eu/kea/wordpress/wp-json/wp/v2/event/"+id + "?_embed")
+  .then(e=>e.json())
+  .then(showSinglePost)
+
 
 function showSinglePost(aPost){
-    console.log(aPost);
+  console.log(aPost);
+  document.querySelector("#showSingleEvent h1").textContent=aPost.title.rendered;
+
+    document.querySelector(".price span ").textContent = aPost.acf.price;
+    document.querySelector(".time").textContent = aPost.acf.time;
+    document.querySelector(".date").textContent = aPost.acf.date;
+    document.querySelector(".venue").textContent = aPost.acf.venue;
+    document.querySelector(".description").innerHTML = aPost.content.rendered;
+
+    document.querySelector("img").setAttribute("src", aPost._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url);
+
 }
+
+
 
 
 
@@ -34,3 +47,8 @@ function fetchEvents (){
     }
 
 }
+
+
+
+
+

@@ -36,15 +36,19 @@ function showOneEvent(anEvent){
 
     clone.querySelector("h1").textContent = anEvent.title.rendered;
     clone.querySelector(".price span ").textContent = anEvent.acf.price;
-    clone.querySelector(".image")
     clone.querySelector(".time").textContent = anEvent.acf.time;
-    clone.querySelector(".date").textContent = anEvent.acf.date;
     clone.querySelector(".venue").textContent = anEvent.acf.venue;
     clone.querySelector(".description").innerHTML = anEvent.content.rendered;
 
     clone.querySelector("img").setAttribute("src", anEvent._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url);
 
     clone.querySelector(".readmore").href="subpage.html?id=" + anEvent.id;
+
+    let year = anEvent.acf.date.substring(0,4);
+    let month = anEvent.acf.date.substring(4,6);
+    let day = anEvent.acf.date.substring(6,8);
+
+    clone.querySelector(".date").innerHTML = day + "." + month + "." + year;
 
      if(anEvent.acf.price == 0){
         clone.querySelector(".price").textContent = "FREE"    }else {
