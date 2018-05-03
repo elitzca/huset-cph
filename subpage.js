@@ -17,7 +17,13 @@ function showSinglePost(aPost){
     document.querySelector(".venue").textContent = aPost.acf.venue;
     document.querySelector(".description").innerHTML = aPost.content.rendered;
 
-    document.querySelector("img").setAttribute("src", aPost._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url);
+    document.querySelector("img").setAttribute("src", aPost._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url);
+
+    let year = aPost.acf.date.substring(0,4);
+    let month = aPost.acf.date.substring(4,6);
+    let day = aPost.acf.date.substring(6,8);
+
+    document.querySelector(".date").innerHTML = day + "." + month + "." + year;
 
 }
 
